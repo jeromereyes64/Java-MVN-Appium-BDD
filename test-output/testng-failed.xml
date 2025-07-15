@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Appium TestNG Cucumber Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="BDD Tests(failed)">
+    <classes>
+      <class name="appiumJava.testqa.runners.TestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- appiumJava.testqa.runners.TestRunner -->
+    </classes>
+  </test> <!-- BDD Tests(failed) -->
+</suite> <!-- Failed suite [Appium TestNG Cucumber Suite] -->

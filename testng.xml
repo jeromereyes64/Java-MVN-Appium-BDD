@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Appium TestNG Cucumber Suite">
+    <test name="BDD Tests">
+        <classes>
+            <class name="appiumJava.testqa.runners.TestRunner"/>
+        </classes>
+    </test>
+</suite>

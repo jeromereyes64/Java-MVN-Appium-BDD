@@ -1,4 +1,4 @@
-@debug
+@smoke
 Feature: Long press on Featured Article in Wikipedia Home Page
 
   As a user

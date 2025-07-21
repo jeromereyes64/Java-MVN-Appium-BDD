@@ -154,4 +154,50 @@ public class CommonActions {
 			throw new AssertionError("❌ No element text matched expected: " + expectedText);
 		}
 	}
+	
+	
+	/**
+	 * Scrolls vertically until the element identified by the locator is visible or until timeout.
+	 *
+	 * @param locator  the By locator of the target element
+	 * @param maxScrolls the maximum number of scroll attempts
+	 */
+	public void scrollToElement(By locator, int maxScrolls) {
+	    int screenHeight = driver.manage().window().getSize().height;
+	    int screenWidth = driver.manage().window().getSize().width;
+	    int scrollCount = 0;
+
+	    while (scrollCount < maxScrolls) {
+	        try {
+	            WebElement element = driver.findElement(locator);
+	            if (element.isDisplayed()) {
+	                System.out.println("✅ Element found after scrolling: " + locator);
+	                return;
+	            }
+	        } catch (Exception ignored) {
+	            // Element not visible yet, keep scrolling
+	        }
+
+	        // Perform vertical scroll (swipe up)
+	        int startY = (int) (screenHeight * 0.7);
+	        int endY = (int) (screenHeight * 0.3);
+	        int centerX = screenWidth / 2;
+
+	        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+	        Sequence swipe = new Sequence(finger, 1);
+
+	        swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), centerX, startY));
+	        swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+	        swipe.addAction(finger.createPointerMove(Duration.ofMillis(500), PointerInput.Origin.viewport(), centerX, endY));
+	        swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+	        driver.perform(Collections.singletonList(swipe));
+
+	        scrollCount++;
+	        System.out.println("🔄 Scrolling attempt " + scrollCount + " for element: " + locator);
+	    }
+
+	    throw new AssertionError("❌ Element not found after " + maxScrolls + " scrolls: " + locator);
+	}
+
 }

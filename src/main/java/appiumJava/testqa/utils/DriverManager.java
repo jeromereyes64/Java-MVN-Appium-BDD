@@ -29,8 +29,9 @@ public class DriverManager {
 
 		// Required Capabilities
 		options.setPlatformName("Android");
-		options.setDeviceName("0A241JEC218864"); // Replace with your real device/emulator ID
+		options.setDeviceName("RZ8R1178SHH"); // Replace with your real device/emulator ID
 		options.setAutomationName("UiAutomator2");
+		options.setPlatformVersion("13.0");
 
 		// Installed app details (Wikipedia in this case)
 		options.setAppPackage("org.wikipedia");

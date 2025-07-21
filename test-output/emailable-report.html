@@ -8,11 +8,36 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Appium TestNG Cucumber Suite</th></tr>
-<tr><td><a href="#t0">BDD Tests</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">12,834</td><td></td><td></td></tr>
+<tr><th colspan="8">Default suite</th></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">5,346</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Appium TestNG Cucumber Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">BDD Tests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">appiumJava.testqa.runners.TestRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1752577826563</td><td rowspan="1">12284</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">appiumJava.testqa.runners.TestRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1753065159004</td><td rowspan="1">4712</td></tr></tbody>
 </table>
-<h2>BDD Tests</h2><h3 id="m0">appiumJava.testqa.runners.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Long press on the Featured Article section&quot;</td><td>&quot;Long press on Featured Article in Wikipedia Home Page&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">appiumJava.testqa.runners.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Scroll until &quot;Scroll Serpent&quot; appears in the search list&quot;</td><td>&quot;Scroll through search results until the target element is visible&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">io.cucumber.testng.UndefinedStepException: The step &apos;the app is launched&apos; and 3 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given(&quot;the app is launched&quot;)
+public void the_app_is_launched() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When(&quot;I search for {string}&quot;)
+public void i_search_for(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When(&quot;I scroll until I see {string} in the search list&quot;)
+public void i_scroll_until_i_see_in_the_search_list(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;I should see {string} displayed on the screen&quot;)
+public void i_should_see_displayed_on_the_screen(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at ✽.the app is launched(file:///C:/Users/Jerome/eclipse-workspace/testqa/src/test/resources/features/scrollSearchList.feature:9)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

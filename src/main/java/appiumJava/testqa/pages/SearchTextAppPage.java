@@ -25,7 +25,7 @@ public class SearchTextAppPage {
     // Enter search text
     public void enterSearchText(String searchTerm) {
         actions.sendKeys(SEARCH_FIELD, searchTerm);
-        
+        actions.hideKeyboardIfVisible();
     }
 
     public void verifySearchResultsContain(String expectedText) {

@@ -1,27 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-21T14:32:38 NZST" name="Default suite" finished-at="2025-07-21T14:32:43 NZST" duration-ms="5346">
+  <suite started-at="2025-07-21T22:30:37 NZST" name="Default suite" finished-at="2025-07-21T22:32:03 NZST" duration-ms="85870">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-07-21T14:32:38 NZST" name="Default test" finished-at="2025-07-21T14:32:43 NZST" duration-ms="5346">
+    <test started-at="2025-07-21T22:30:37 NZST" name="Default test" finished-at="2025-07-21T22:32:03 NZST" duration-ms="85870">
       <class name="appiumJava.testqa.runners.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-21T14:32:38 NZST" name="setUpClass" finished-at="2025-07-21T14:32:38 NZST" duration-ms="558" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-21T22:30:37 NZST" name="setUpClass" finished-at="2025-07-21T22:30:38 NZST" duration-ms="686" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@6f89292e]]>
+                <![CDATA[org.testng.TestRunner@70c53dbe]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-21T14:32:39 NZST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-21T14:32:43 NZST" duration-ms="4712" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-21T22:30:38 NZST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-21T22:30:56 NZST" duration-ms="18138" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Open the Wikipedia app"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Launch Wikipedia App"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-21T22:30:56 NZST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-21T22:31:09 NZST" duration-ms="13159" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Long press on the Featured Article section"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Long press on Featured Article in Wikipedia Home Page"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-21T22:31:09 NZST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-21T22:31:46 NZST" duration-ms="36719" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -34,66 +66,26 @@
               </value>
             </param>
           </params>
-          <exception class="io.cucumber.testng.UndefinedStepException">
-            <message>
-              <![CDATA[The step 'the app is launched' and 3 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Given("the app is launched")
-public void the_app_is_launched() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When("I search for {string}")
-public void i_search_for(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When("I scroll until I see {string} in the search list")
-public void i_scroll_until_i_see_in_the_search_list(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("I should see {string} displayed on the screen")
-public void i_should_see_displayed_on_the_screen(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'the app is launched' and 3 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Given("the app is launched")
-public void the_app_is_launched() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When("I search for {string}")
-public void i_search_for(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When("I scroll until I see {string} in the search list")
-public void i_scroll_until_i_see_in_the_search_list(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("I should see {string} displayed on the screen")
-public void i_should_see_displayed_on_the_screen(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-at ✽.the app is launched(file:///C:/Users/Jerome/eclipse-workspace/testqa/src/test/resources/features/scrollSearchList.feature:9)
-]]>
-            </full-stacktrace>
-          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-21T14:32:43 NZST" name="tearDownClass" finished-at="2025-07-21T14:32:43 NZST" duration-ms="34" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-21T22:31:46 NZST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-21T22:32:03 NZST" duration-ms="17076" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Search for a term using the Wikipedia search bar"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Wikipedia Search Feature"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-21T22:32:03 NZST" name="tearDownClass" finished-at="2025-07-21T22:32:03 NZST" duration-ms="43" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

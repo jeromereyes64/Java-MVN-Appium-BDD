@@ -1,4 +1,4 @@
-@debug
+@smoke
 Feature: Scroll through search results until the target element is visible
 
   As a mobile app user

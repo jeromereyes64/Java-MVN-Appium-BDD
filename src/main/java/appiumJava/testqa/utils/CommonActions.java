@@ -1,6 +1,7 @@
 package appiumJava.testqa.utils;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.HidesKeyboard;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -13,6 +14,10 @@ import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+//import io.appium.java_client.android.nativekey.KeyEvent;
+//import io.appium.java_client.android.nativekey.AndroidKey;
+//import io.appium.java_client.android.AndroidDriver;
 
 /**
  * CommonActions provides reusable methods to interact with mobile elements such
@@ -47,6 +52,9 @@ public class CommonActions {
 			System.err.println("❌ Failed to click element: " + locator);
 			throw e;
 		}
+		
+//		AndroidDriver driver = (AndroidDriver) this.driver;
+//		driver.pressKey(new KeyEvent(AndroidKey.BACK));
 	}
 
 	/**
@@ -66,47 +74,45 @@ public class CommonActions {
 			throw e;
 		}
 	}
-	
+
 	/**
-	 * Performs a long click (long press) on the element identified by the given locator.
+	 * Performs a long click (long press) on the element identified by the given
+	 * locator.
 	 *
 	 * @param locator the By locator of the element to long press
 	 * @throws Exception if the element cannot be found or the action fails
 	 */
 	public void longClick(By locator) {
-	    try {
-	        WebElement element = driver.findElement(locator);
+		try {
+			WebElement element = driver.findElement(locator);
 
-	        // Create finger input for touch actions
-	        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
-	        Sequence longPress = new Sequence(finger, 1);
+			// Create finger input for touch actions
+			PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+			Sequence longPress = new Sequence(finger, 1);
 
-	        // Move finger to element and press
-	        longPress.addAction(finger.createPointerMove(
-	                Duration.ofMillis(0),
-	                PointerInput.Origin.fromElement(element),
-	                0, 0));
-	        longPress.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+			// Move finger to element and press
+			longPress.addAction(
+					finger.createPointerMove(Duration.ofMillis(0), PointerInput.Origin.fromElement(element), 0, 0));
+			longPress.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
 
-	        // Hold for 2 seconds
-	        longPress.addAction(new org.openqa.selenium.interactions.Pause(finger, Duration.ofSeconds(2)));
+			// Hold for 2 seconds
+			longPress.addAction(new org.openqa.selenium.interactions.Pause(finger, Duration.ofSeconds(2)));
 
-	        // Release finger
-	        longPress.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+			// Release finger
+			longPress.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 
-	        driver.perform(Collections.singletonList(longPress));
+			driver.perform(Collections.singletonList(longPress));
 
-	        System.out.println("Long click performed on element: " + locator);
-	    } catch (Exception e) {
-	        System.err.println("Failed to perform long click on element: " + locator);
-	        throw e;
-	    }
+			System.out.println("Long click performed on element: " + locator);
+		} catch (Exception e) {
+			System.err.println("Failed to perform long click on element: " + locator);
+			throw e;
+		}
 	}
-	
-	
-	
+
 	/**
-	 * Verifies that the web element identified by the given locator is visible on the page.
+	 * Verifies that the web element identified by the given locator is visible on
+	 * the page.
 	 *
 	 * @throws AssertionError if the element is not visible
 	 * @throws Exception      if an unexpected error occurs during element lookup
@@ -154,50 +160,113 @@ public class CommonActions {
 			throw new AssertionError("❌ No element text matched expected: " + expectedText);
 		}
 	}
-	
-	
+
 	/**
-	 * Scrolls vertically until the element identified by the locator is visible or until timeout.
-	 *
-	 * @param locator  the By locator of the target element
-	 * @param maxScrolls the maximum number of scroll attempts
+	 * Hides the keyboard if it is visible.
+	 */
+	public void hideKeyboardIfVisible() {
+		try {
+			if (driver instanceof HidesKeyboard) {
+				((HidesKeyboard) driver).hideKeyboard();
+				System.out.println("✅ Keyboard hidden successfully.");
+			} else {
+				System.out.println("ℹ️ Driver does not support hiding keyboard.");
+			}
+		} catch (Exception e) {
+			System.out.println("ℹ️ Keyboard was not visible or already hidden.");
+		}
+	}
+
+	/**
+	 * Scrolls vertically until the element is visible or until max scroll attempts
+	 * are reached.
 	 */
 	public void scrollToElement(By locator, int maxScrolls) {
-	    int screenHeight = driver.manage().window().getSize().height;
-	    int screenWidth = driver.manage().window().getSize().width;
-	    int scrollCount = 0;
+		// ✅ Get screen dimensions
+		int screenHeight = driver.manage().window().getSize().height; // e.g., 2400 px
+		int screenWidth = driver.manage().window().getSize().width; // e.g., 1080 px
+		int scrollCount = 0; // ✅ Track how many scrolls have been performed
 
-	    while (scrollCount < maxScrolls) {
-	        try {
-	            WebElement element = driver.findElement(locator);
-	            if (element.isDisplayed()) {
-	                System.out.println("✅ Element found after scrolling: " + locator);
-	                return;
-	            }
-	        } catch (Exception ignored) {
-	            // Element not visible yet, keep scrolling
-	        }
+		while (scrollCount < maxScrolls) {
+			try {
+				// ✅ If the element is found and displayed, stop scrolling
+				WebElement element = driver.findElement(locator);
+				if (element.isDisplayed()) {
+					System.out.println("✅ Element found after scrolling: " + locator);
+					return;
+				}
+			} catch (Exception ignored) {
+				// Element not visible yet, continue scrolling
+			}
 
-	        // Perform vertical scroll (swipe up)
-	        int startY = (int) (screenHeight * 0.7);
-	        int endY = (int) (screenHeight * 0.3);
-	        int centerX = screenWidth / 2;
+			// ✅ Calculate swipe coordinates (vertical scroll)
+			int startY = (int) (screenHeight * 0.7); // Start near bottom (70% of screen)
+			int endY = (int) (screenHeight * 0.3); // End near top (30% of screen)
+			int centerX = screenWidth / 2; // Swipe in the middle of the screen
 
-	        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
-	        Sequence swipe = new Sequence(finger, 1);
+			// ✅ Perform swipe action using W3C actions
+			PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+			Sequence swipe = new Sequence(finger, 1);
 
-	        swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), centerX, startY));
-	        swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-	        swipe.addAction(finger.createPointerMove(Duration.ofMillis(500), PointerInput.Origin.viewport(), centerX, endY));
-	        swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+			swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), centerX, startY));
+			swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+			swipe.addAction(
+					finger.createPointerMove(Duration.ofMillis(600), PointerInput.Origin.viewport(), centerX, endY));
+			swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 
-	        driver.perform(Collections.singletonList(swipe));
+			driver.perform(Collections.singletonList(swipe));
 
-	        scrollCount++;
-	        System.out.println("🔄 Scrolling attempt " + scrollCount + " for element: " + locator);
-	    }
+			scrollCount++;
+			System.out.println("🔄 Scrolling attempt " + scrollCount + " for element: " + locator);
 
-	    throw new AssertionError("❌ Element not found after " + maxScrolls + " scrolls: " + locator);
+			// ✅ Give the list time to refresh before next scroll
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException ignored) {
+			}
+		}
+
+		throw new AssertionError("❌ Element not found after " + maxScrolls + " scrolls: " + locator);
+	}
+
+	/**
+	 * Drags an element from the source locator and drops it onto the target
+	 * locator.
+	 *
+	 * @param sourceLocator the By locator of the element to drag
+	 * @param targetLocator the By locator of the element to drop onto
+	 */
+	public void dragAndDrop(By sourceLocator, By targetLocator) {
+		try {
+			WebElement source = driver.findElement(sourceLocator);
+			WebElement target = driver.findElement(targetLocator);
+
+			// ✅ Get source and target center points
+			int startX = source.getRect().getX() + (source.getSize().getWidth() / 2);
+			int startY = source.getRect().getY() + (source.getSize().getHeight() / 2);
+
+			int endX = target.getRect().getX() + (target.getSize().getWidth() / 2);
+			int endY = target.getRect().getY() + (target.getSize().getHeight() / 2);
+
+			// ✅ Create a swipe gesture (drag → drop)
+			PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+			Sequence dragAndDrop = new Sequence(finger, 1);
+
+			dragAndDrop
+					.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
+			dragAndDrop.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+			dragAndDrop.addAction(new org.openqa.selenium.interactions.Pause(finger, Duration.ofMillis(500)));
+			dragAndDrop.addAction(
+					finger.createPointerMove(Duration.ofMillis(1000), PointerInput.Origin.viewport(), endX, endY));
+			dragAndDrop.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+			driver.perform(Collections.singletonList(dragAndDrop));
+
+			System.out.println("✅ Dragged element from " + sourceLocator + " to " + targetLocator);
+		} catch (Exception e) {
+			System.err.println("❌ Failed to drag and drop from " + sourceLocator + " to " + targetLocator);
+			throw e;
+		}
 	}
 
 }

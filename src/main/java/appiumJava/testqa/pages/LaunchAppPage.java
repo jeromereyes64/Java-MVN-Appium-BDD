@@ -22,9 +22,9 @@ public class LaunchAppPage {
 
 	public void waitForAppToOpen() {
 		try {
-			System.out.println("📱 Launching AoFrio app...");
+			System.out.println("📱 Launching app...");
 			Thread.sleep(5000); // Simulate observation time
-			System.out.println("✅ AoFrio app is launched.");
+			System.out.println("✅ app is launched.");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

@@ -1,5 +1,6 @@
 package appiumJava.testqa.utils;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.HidesKeyboard;
 
@@ -45,14 +46,15 @@ public class CommonActions {
 	 */
 	public void click(By locator) {
 		try {
-			WebElement element = driver.findElement(locator);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
 			element.click();
 			System.out.println("✅ Clicked on element: " + locator);
 		} catch (Exception e) {
 			System.err.println("❌ Failed to click element: " + locator);
 			throw e;
 		}
-		
+
 //		AndroidDriver driver = (AndroidDriver) this.driver;
 //		driver.pressKey(new KeyEvent(AndroidKey.BACK));
 	}
@@ -162,6 +164,23 @@ public class CommonActions {
 	}
 
 	/**
+	 * Asserts that the element identified by the locator has the expected text.
+	 *
+	 * @param locator      the By locator of the element
+	 * @param expectedText the exact text expected
+	 */
+	public void assertElementTextEquals(By locator, String expectedText) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+
+		String actualText = element.getText();
+		System.out.println("🔍 Actual Text: " + actualText);
+
+		Assert.assertEquals(actualText.trim(), expectedText.trim(), "❌ Text does not match for element: " + locator);
+		System.out.println("✅ Text assertion passed: " + expectedText);
+	}
+
+	/**
 	 * Hides the keyboard if it is visible.
 	 */
 	public void hideKeyboardIfVisible() {
@@ -268,5 +287,58 @@ public class CommonActions {
 			throw e;
 		}
 	}
+
+	/**
+	 * Scrolls the view until the given visible text is found. Uses Android
+	 * UiScrollable with UiAutomator.
+	 *
+	 * @param visibleText The exact text to scroll to
+	 */
+	public void scrollToText(String visibleText) {
+		try {
+			driver.findElement(
+					AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView("
+							+ "new UiSelector().text(\"" + visibleText + "\"))"));
+			System.out.println("✅ Scrolled to text: " + visibleText);
+		} catch (Exception e) {
+			System.err.println("❌ Failed to scroll to text: " + visibleText);
+			throw e;
+		}
+	}
+
+	/**
+	 * Clicks on an element by its visible text. Uses Android UiSelector.
+	 *
+	 * @param visibleText The exact text of the element to click
+	 */
+	public void clickByText(String visibleText) {
+		try {
+			driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"" + visibleText + "\")")).click();
+			System.out.println("✅ Clicked element with text: " + visibleText);
+		} catch (Exception e) {
+			System.err.println("❌ Failed to click element with text: " + visibleText);
+			throw e;
+		}
+	}
+
+	/**
+	 * Gets the text from a Toast message on Android.
+	 *
+	 * @return The toast message text
+	 */
+	public String getToastMessage() {
+	    try {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	        WebElement toastElement = wait.until(
+	                ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.Toast[1]"))
+	        );
+	        String message = toastElement.getAttribute("text"); 
+	        System.out.println("✅ Toast message captured: " + message);
+	        return message;
+	    } catch (Exception e) {
+	        throw new AssertionError("❌ Failed to capture toast message: " + e.getMessage());
+	    }
+	}
+
 
 }

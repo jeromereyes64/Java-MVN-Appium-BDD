@@ -36,15 +36,18 @@ public class DriverManager {
 		// Installed app details (Wikipedia in this case)
 		options.setAppPackage("org.wikipedia");
 		options.setAppActivity("org.wikipedia.main.MainActivity");
+		options.setFullReset(false);
+		options.setNoReset(true);
+
+//		Installed app details (General Store in this case)
+//		options.setApp(System.getProperty("user.dir") + "/app/General-Store.apk");
+//		options.setFullReset(true);
+//		options.setNoReset(false);
 
 		// Optional wait settings
 		options.setAppWaitForLaunch(true); // Wait for app to fully launch
 		options.setAppWaitActivity("*"); // Accept any post-launch activity
 		options.setAppWaitDuration(Duration.ofSeconds(10)); // Wait time before timeout
-
-		// Additional Configs
-		options.setNoReset(true);
-		options.setFullReset(false);
 
 		// Initialize the Android driver
 		driver = new AndroidDriver(URI.create("http://127.0.0.1:4723").toURL(), options);
@@ -66,7 +69,7 @@ public class DriverManager {
 		if (driver != null) {
 			((AndroidDriver) driver).terminateApp("org.wikipedia");
 			driver.quit();
-			
+
 		}
 	}
 }

@@ -1,91 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-21T22:30:37 NZST" name="Default suite" finished-at="2025-07-21T22:32:03 NZST" duration-ms="85870">
+  <suite started-at="2025-07-22T16:33:00 NZST" name="Default suite" finished-at="2025-07-22T16:33:17 NZST" duration-ms="17308">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-07-21T22:30:37 NZST" name="Default test" finished-at="2025-07-21T22:32:03 NZST" duration-ms="85870">
+    <test started-at="2025-07-22T16:33:00 NZST" name="Default test" finished-at="2025-07-22T16:33:17 NZST" duration-ms="17308">
       <class name="appiumJava.testqa.runners.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-21T22:30:37 NZST" name="setUpClass" finished-at="2025-07-21T22:30:38 NZST" duration-ms="686" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-22T16:33:00 NZST" name="setUpClass" finished-at="2025-07-22T16:33:00 NZST" duration-ms="470" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@70c53dbe]]>
+                <![CDATA[org.testng.TestRunner@96a75da]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-21T22:30:38 NZST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-21T22:30:56 NZST" duration-ms="18138" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-22T16:33:00 NZST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-22T16:33:17 NZST" duration-ms="16778" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Open the Wikipedia app"]]>
+                <![CDATA["User tries to proceed without entering a name"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Launch Wikipedia App"]]>
+                <![CDATA["Shopping preferences selection in General Store app"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-21T22:30:56 NZST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-21T22:31:09 NZST" duration-ms="13159" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Long press on the Featured Article section"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Long press on Featured Article in Wikipedia Home Page"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-21T22:31:09 NZST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-21T22:31:46 NZST" duration-ms="36719" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Scroll until "Scroll Serpent" appears in the search list"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Scroll through search results until the target element is visible"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-21T22:31:46 NZST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-21T22:32:03 NZST" duration-ms="17076" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Search for a term using the Wikipedia search bar"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Wikipedia Search Feature"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-21T22:32:03 NZST" name="tearDownClass" finished-at="2025-07-21T22:32:03 NZST" duration-ms="43" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:appiumJava.testqa.runners.TestRunner@4b2bac3f]" started-at="2025-07-22T16:33:17 NZST" name="tearDownClass" finished-at="2025-07-22T16:33:17 NZST" duration-ms="29" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

@@ -20,7 +20,6 @@ public class GeneralStorePage {
 	private static final By MALE_RADIO = By.id("com.androidsample.generalstore:id/radioMale");
 	private static final By FEMALE_RADIO = By.id("com.androidsample.generalstore:id/radioFemale");
 	private static final By LETS_SHOP_BUTTON = By.id("com.androidsample.generalstore:id/btnLetsShop");
-	private static final By TOAST_MESSAGE = By.xpath("//android.widget.Toast[@text='Please enter your name']");
 
 	// Actions
 	public void selectCountry(String countryName) {

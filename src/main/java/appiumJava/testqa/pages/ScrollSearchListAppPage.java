@@ -20,7 +20,7 @@ public class ScrollSearchListAppPage {
      * Scrolls until "Scroll Serpent" is visible in the search list.
      */
     public void scrollUntilScrollSerpentVisible() {
-        actions.scrollToElement(SCROLL_ELEMENT, 20); // max 5 scrolls
+        actions.scrollToElement(SCROLL_ELEMENT, 40); // max 5 scrolls
     }
 
     /**

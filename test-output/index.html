@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Jerome\AppData\Local\Temp\testng-eclipse-772050263\testng-customsuite.xml</span>
+                    <span>C:\Users\Jerome\AppData\Local\Temp\testng-eclipse-8938308\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="appiumJava.testqa.runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Scroll until &quot;Scroll Serpent&quot; appears in the search list&quot;, &quot;Scroll through search results until the...)">runScenario("Scroll until "Scroll Serpent" appears in the search list", "Scroll through search results until the...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,7 +117,17 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="appiumJava.testqa.runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;User tries to proceed without entering a name&quot;, &quot;Shopping preferences selection in General Store ap...)">runScenario("User tries to proceed without entering a name", "Shopping preferences selection in General Store ap...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="appiumJava.testqa.runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Search for a term using the Wikipedia search bar&quot;, &quot;Wikipedia Search Feature&quot;)">runScenario("Search for a term using the Wikipedia search bar", "Wikipedia Search Feature")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="appiumJava.testqa.runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Long press on the Featured Article section&quot;, &quot;Long press on Featured Article in Wikipedia Home Page...)">runScenario("Long press on the Featured Article section", "Long press on Featured Article in Wikipedia Home Page...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="appiumJava.testqa.runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Open the Wikipedia app&quot;, &quot;Launch Wikipedia App&quot;)">runScenario("Open the Wikipedia app", "Launch Wikipedia App")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -118,6 +142,31 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">appiumJava.testqa.runners.TestRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Scroll until &quot;Scroll Serpent&quot; appears in the search list&quot;, &quot;Scroll through search results until the...)">
+                  </a> <!-- runScenario("Scroll until "Scroll Serpent" appears in the search list", "Scroll through search results until the...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Scroll until "Scroll Serpent" appears in the search list","Scroll through search results until the target element is visible")</span>
+                  <div class="stack-trace">java.lang.AssertionError: ❌ Element not found after 20 scrolls: By.xpath: //android.widget.TextView[@resource-id=&quot;org.wikipedia:id/page_list_item_title&quot; and @text=&quot;Scroll Serpent&quot;]
+	at appiumJava.testqa.utils.CommonActions.scrollToElement(CommonActions.java:248)
+	at appiumJava.testqa.pages.ScrollSearchListAppPage.scrollUntilScrollSerpentVisible(ScrollSearchListAppPage.java:23)
+	at appiumJava.testqa.stepdefinitions.ScrollSearchListAppSteps.i_scroll_until_i_see_in_the_search_list(ScrollSearchListAppSteps.java:28)
+	at ✽.I scroll until I see &quot;Scroll Serpent&quot; in the search list(file:///C:/Users/Jerome/eclipse-workspace/testqa/src/test/resources/features/scrollSearchList.feature:13)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -126,10 +175,30 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;User tries to proceed without entering a name&quot;, &quot;Shopping preferences selection in General Store ap...)">
-                  </a> <!-- runScenario("User tries to proceed without entering a name", "Shopping preferences selection in General Store ap...) -->
+                  <a name="runScenario(&quot;Search for a term using the Wikipedia search bar&quot;, &quot;Wikipedia Search Feature&quot;)">
+                  </a> <!-- runScenario("Search for a term using the Wikipedia search bar", "Wikipedia Search Feature") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("User tries to proceed without entering a name","Shopping preferences selection in General Store app")</span>
+                  <span class="parameters">("Search for a term using the Wikipedia search bar","Wikipedia Search Feature")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Long press on the Featured Article section&quot;, &quot;Long press on Featured Article in Wikipedia Home Page...)">
+                  </a> <!-- runScenario("Long press on the Featured Article section", "Long press on Featured Article in Wikipedia Home Page...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Long press on the Featured Article section","Long press on Featured Article in Wikipedia Home Page")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Open the Wikipedia app&quot;, &quot;Launch Wikipedia App&quot;)">
+                  </a> <!-- runScenario("Open the Wikipedia app", "Launch Wikipedia App") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Open the Wikipedia app","Launch Wikipedia App")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -139,7 +208,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Jerome\AppData\Local\Temp\testng-eclipse-772050263\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Jerome\AppData\Local\Temp\testng-eclipse-8938308\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -196,16 +265,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'appiumJava.testqa.runners.TestRunner')
-data.setCell(0, 3, 16778);
+data.setCell(0, 3, 60614);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'runScenario')
+data.setCell(1, 2, 'appiumJava.testqa.runners.TestRunner')
+data.setCell(1, 3, 15648);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'runScenario')
+data.setCell(2, 2, 'appiumJava.testqa.runners.TestRunner')
+data.setCell(2, 3, 12849);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'runScenario')
+data.setCell(3, 2, 'appiumJava.testqa.runners.TestRunner')
+data.setCell(3, 3, 10728);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 16 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -233,16 +314,30 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">appiumJava.testqa.runners.TestRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@96a75da)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@2b680207)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">runScenario("User tries to proceed without entering a name", "Shopping preferences selection in General Store ap...)</span>
-                <span class="method-start">480 ms</span>
+                <span class="method-name">runScenario("Open the Wikipedia app", "Launch Wikipedia App")</span>
+                <span class="method-start">536 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Long press on the Featured Article section", "Long press on Featured Article in Wikipedia Home Page...)</span>
+                <span class="method-start">11269 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Scroll until "Scroll Serpent" appears in the search list", "Scroll through search results until the...)</span>
+                <span class="method-start">24120 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Search for a term using the Wikipedia search bar", "Wikipedia Search Feature")</span>
+                <span class="method-start">84736 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">17261 ms</span>
+                <span class="method-start">100386 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

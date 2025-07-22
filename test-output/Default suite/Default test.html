@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jul 22 16:33:00 NZST 2025</td>
+<td>Started on:</td><td>Tue Jul 22 16:40:16 NZST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>17 seconds (17308 ms)</td>
+<tr><td>Total time:</td><td>100 seconds (100442 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,31 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='appiumJava.testqa.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: appiumJava.testqa.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Scroll until "Scroll Serpent" appears in the search list", "Scroll through search results until the target element is visible"</td>
+<td><div><pre>java.lang.AssertionError: ❌ Element not found after 20 scrolls: By.xpath: //android.widget.TextView[@resource-id=&quot;org.wikipedia:id/page_list_item_title&quot; and @text=&quot;Scroll Serpent&quot;]
+	at appiumJava.testqa.utils.CommonActions.scrollToElement(CommonActions.java:248)
+	at appiumJava.testqa.pages.ScrollSearchListAppPage.scrollUntilScrollSerpentVisible(ScrollSearchListAppPage.java:23)
+	at appiumJava.testqa.stepdefinitions.ScrollSearchListAppSteps.i_scroll_until_i_see_in_the_search_list(ScrollSearchListAppSteps.java:28)
+	at ✽.I scroll until I see &quot;Scroll Serpent&quot; in the search list(file:///C:/Users/Jerome/eclipse-workspace/testqa/src/test/resources/features/scrollSearchList.feature:13)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1800592689", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1800592689'><pre>java.lang.AssertionError: ❌ Element not found after 20 scrolls: By.xpath: //android.widget.TextView[@resource-id=&quot;org.wikipedia:id/page_list_item_title&quot; and @text=&quot;Scroll Serpent&quot;]
+	at appiumJava.testqa.utils.CommonActions.scrollToElement(CommonActions.java:248)
+	at appiumJava.testqa.pages.ScrollSearchListAppPage.scrollUntilScrollSerpentVisible(ScrollSearchListAppPage.java:23)
+	at appiumJava.testqa.stepdefinitions.ScrollSearchListAppSteps.i_scroll_until_i_see_in_the_search_list(ScrollSearchListAppSteps.java:28)
+	at ✽.I scroll until I see &quot;Scroll Serpent&quot; in the search list(file:///C:/Users/Jerome/eclipse-workspace/testqa/src/test/resources/features/scrollSearchList.feature:13)
+</pre></div></td>
+<td>60</td>
+<td>appiumJava.testqa.runners.TestRunner@4b2bac3f</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,9 +101,19 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='appiumJava.testqa.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: appiumJava.testqa.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User tries to proceed without entering a name", "Shopping preferences selection in General Store app"</td>
+<td title='appiumJava.testqa.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: appiumJava.testqa.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Search for a term using the Wikipedia search bar", "Wikipedia Search Feature"</td>
 <td></td>
-<td>16</td>
+<td>15</td>
+<td>appiumJava.testqa.runners.TestRunner@4b2bac3f</td></tr>
+<tr>
+<td title='appiumJava.testqa.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: appiumJava.testqa.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Long press on the Featured Article section", "Long press on Featured Article in Wikipedia Home Page"</td>
+<td></td>
+<td>12</td>
+<td>appiumJava.testqa.runners.TestRunner@4b2bac3f</td></tr>
+<tr>
+<td title='appiumJava.testqa.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: appiumJava.testqa.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Open the Wikipedia app", "Launch Wikipedia App"</td>
+<td></td>
+<td>10</td>
 <td>appiumJava.testqa.runners.TestRunner@4b2bac3f</td></tr>
 </table><p>
 </body>

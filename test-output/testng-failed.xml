@@ -6,7 +6,7 @@
       <class name="appiumJava.testqa.runners.TestRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
+          <include name="runScenario" invocation-numbers="2"/>
           <include name="tearDownClass"/>
         </methods>
       </class> <!-- appiumJava.testqa.runners.TestRunner -->

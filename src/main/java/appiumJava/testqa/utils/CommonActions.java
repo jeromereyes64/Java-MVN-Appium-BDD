@@ -327,18 +327,35 @@ public class CommonActions {
 	 * @return The toast message text
 	 */
 	public String getToastMessage() {
-	    try {
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-	        WebElement toastElement = wait.until(
-	                ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.Toast[1]"))
-	        );
-	        String message = toastElement.getAttribute("text"); 
-	        System.out.println("✅ Toast message captured: " + message);
-	        return message;
-	    } catch (Exception e) {
-	        throw new AssertionError("❌ Failed to capture toast message: " + e.getMessage());
-	    }
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+			WebElement toastElement = wait
+					.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.Toast[1]")));
+			String message = toastElement.getAttribute("text");
+			System.out.println("✅ Toast message captured: " + message);
+			return message;
+		} catch (Exception e) {
+			throw new AssertionError("❌ Failed to capture toast message: " + e.getMessage());
+		}
 	}
 
+	/**
+	 * Gets the visible text of an element identified by the given locator.
+	 *
+	 * @param locator the By locator of the element
+	 * @return the text content of the element
+	 */
+	public String getText(By locator) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+			String text = element.getText();
+			System.out.println("✅ Retrieved text from element: " + locator + " → " + text);
+			return text;
+		} catch (Exception e) {
+			System.err.println("❌ Failed to get text from element: " + locator);
+			throw e;
+		}
+	}
 
 }

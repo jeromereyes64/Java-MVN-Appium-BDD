@@ -34,15 +34,15 @@ public class DriverManager {
 		options.setPlatformVersion("13.0");
 
 		// Installed app details (Wikipedia in this case)
-		options.setAppPackage("org.wikipedia");
-		options.setAppActivity("org.wikipedia.main.MainActivity");
-		options.setFullReset(false);
-		options.setNoReset(true);
+//		options.setAppPackage("org.wikipedia");
+//		options.setAppActivity("org.wikipedia.main.MainActivity");
+//		options.setFullReset(false);
+//		options.setNoReset(true);
 
 //		Installed app details (General Store in this case)
-//		options.setApp(System.getProperty("user.dir") + "/app/General-Store.apk");
-//		options.setFullReset(true);
-//		options.setNoReset(false);
+		options.setApp(System.getProperty("user.dir") + "/app/General-Store.apk");
+		options.setFullReset(true);
+		options.setNoReset(false);
 
 		// Optional wait settings
 		options.setAppWaitForLaunch(true); // Wait for app to fully launch

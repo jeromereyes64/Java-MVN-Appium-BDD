@@ -27,7 +27,7 @@ import org.testng.annotations.DataProvider;
     monochrome = true,
 
     // Only run scenarios tagged with @debug (you can change this tag as needed)
-    tags = "@generalStore"
+    tags = "@checkout"
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 

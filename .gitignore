@@ -1,0 +1,27 @@
+# Ignore compiled class files
+*.class
+
+# Ignore Maven target build directory
+target/
+!target/classes/.gitignore    # Keep this if you want to track the empty .gitignore only
+
+# Ignore TestNG and test-output reports
+test-output/
+*.html
+*.xml
+*.json
+
+# Ignore Cucumber reports
+cucumber-report.html
+cucumber-report.json
+
+# Ignore IntelliJ / Eclipse project files (optional, but recommended)
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db

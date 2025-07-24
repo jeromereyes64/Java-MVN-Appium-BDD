@@ -19,6 +19,6 @@ Feature: Checkout product from General Store
     And I should be able to place the order successfully
 
     Examples:
-      | country   | name    | gender | productName         |
-      | Argentina | Jerome  | Male   | Air Jordan 4 Retro  |
-      | Australia | Michelle| Female | Nike Blazer Mid     |
+      | country      | name     | gender | productName        |
+      | Argentina    | Jerome   | Male   | Air Jordan 4 Retro |
+      | New Zealand  | Michelle | Female | PG 3               |
